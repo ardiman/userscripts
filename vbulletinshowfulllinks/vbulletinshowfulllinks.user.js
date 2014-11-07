@@ -2,11 +2,12 @@
 // @name         vBulletin - Show full links
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Reveals truncated (...) links in vBulletin-forums.
+// @description:de-DE  Zeigt gekürzte Links in vBulletin-Foren komplett an.
 // @grant        none
 // @include      */showthread.php*
 // @include      */viewtopic.php?*
-// @version      1.7
-// @date         2014-10-23
+// @version      1.8
+// @date         2014-11-07
 // ==/UserScript==
 
 

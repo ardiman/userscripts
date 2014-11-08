@@ -5,7 +5,7 @@
 // @description:de-DE Öffnet Links in Beiträgen im neuen Tab.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/fxforumnewtab
-// @include      http://www.camp-firefox.de/forum/*/*
+// @include      http://www.camp-firefox.de/forum/*
 // @version      1.0.3
 // @date         2014-11-08
 // ==/UserScript==

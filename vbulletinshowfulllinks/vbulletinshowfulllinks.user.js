@@ -4,6 +4,7 @@
 // @description  Reveals truncated (...) links in vBulletin-forums.
 // @description:de-DE  Zeigt gekürzte Links in vBulletin-Foren komplett an.
 // @grant        none
+// @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinshowfulllinks
 // @include      */showthread.php*
 // @include      */viewtopic.php?*
 // @version      1.8

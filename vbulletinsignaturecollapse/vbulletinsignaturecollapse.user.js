@@ -2,7 +2,7 @@
 // @name         vBulletin - Signature Collapse
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Allows quick display toggle of user's signature on vBulletin- and other forums.
-// @description:de-DE Erlaubt schnelles Ausblenden/Anzeigen von Signaturen in vBulletin- und anderen Foren.
+// @description:de-DE Erlaubt schnelles Ausblenden/Anzeigen von Signaturen in vBulletin- und anderen Forensystemen.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinsignaturecollapse
 // @include      */showthread.php*

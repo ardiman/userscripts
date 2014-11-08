@@ -7,8 +7,8 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinshowfulllinks
 // @include      */showthread.php*
 // @include      */viewtopic.php?*
-// @version      1.8
-// @date         2014-11-07
+// @version      1.9
+// @date         2014-11-08
 // ==/UserScript==
 
 

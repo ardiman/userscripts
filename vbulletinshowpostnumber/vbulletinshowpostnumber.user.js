@@ -42,7 +42,7 @@ var titlenode = document.evaluate(
 	null);
 
 // Titelstring ermitteln
-if (titlenode.snapshotItem(0) != null) {
+if (titlenode.snapshotItem(0) !== null) {
 	v_title= fcttitle(titlenode.snapshotItem(0).textContent);
 	// Threadlink setzen, falls gewuenscht
 	if (p_threadlink == 1){
@@ -116,7 +116,7 @@ function fcttitle(a_str){
 	else {
 		wordWrap = a_str;
 	}
-	return wordWrap.replace(/</g,'&lt;').replace(/'/g,'&apos;').replace(/"/g,'&quot;');;
+	return wordWrap.replace(/</g,'&lt;').replace(/'/g,'&apos;').replace(/"/g,'&quot;');
 }
 
 

@@ -2,11 +2,13 @@
 // @name         xenForo - New Topics
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Generates button which opens all new topics of xenForo-boards in tabs
+// @description:de-DE Erstellt in xenForo-Foren eine Schaltfläche, die alle neuen Posts in Tabs öffnet.
 // @grant        GM_openInTab
+// @homepage     https://github.com/ardiman/userscripts/tree/master/xenforonewtopics
 // @include      http://xenforo.com/community/forums/*
 // @include      http://www.xendach.de/forums/*
-// @version      1.0.2
-// @date         2014-02-09
+// @version      1.0.3
+// @date         2014-11-09
 // ==/UserScript==
 
 (function (){

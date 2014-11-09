@@ -2,10 +2,12 @@
 // @name         xenForo - Endless Forum Pages
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Makes xenForo forum pages infinitely long instead of a limited number of posts per page by loading more when you scroll to near the bottom of the page.
+// @description:de-DE Lädt in xenForo-Threads die folgenden Beiträge nach, sobald man bei einem mehrseitigen Thread ans Ende der Seite scrollt.
 // @grant        none
+// @homepage     https://github.com/ardiman/userscripts/tree/master/xenforoendlessforumpages
 // @include      http://xenforo.com/community/threads/*
 // @include      http://www.xendach.de/threads/*
-// @version      1.0.1
+// @version      1.0.2
 // @date         2014-11-09
 // ==/UserScript==
 

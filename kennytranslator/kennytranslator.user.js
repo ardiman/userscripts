@@ -2,12 +2,13 @@
 // @name         Kenny Translator
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Translates text into what Kenny from South Park would say and back again. A translation window appears when you click selected text with the alt key pressed.
+// @description:de-DE  Übersetzt Text in das, was Kenny von South Park sagen würde und umgekehrt. Ein Übersetzungsfenster erscheint, sobald man markierten Text mit gedrückter Alt-Taste anklickt.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/kennytranslator
 // @exclude      http://www.namesuppressed.com/kenny/
 // @include      *
-// @version      1.0
-// @date         2013-03-23
+// @version      1.0.1
+// @date         2014-11-09
 // ==/UserScript==
 
 (function () {

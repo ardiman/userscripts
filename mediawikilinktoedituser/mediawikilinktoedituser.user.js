@@ -7,7 +7,7 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/mediawikilinktoedituser
 // @include      /wiki/(Benutzer|User).*/
 // @include      /title=(Benutzer|User):.*&action=edit/
-// @version      1.0.2
+// @version      1.0.3
 // @date         2014-11-09
 // ==/UserScript==
 

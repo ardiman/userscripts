@@ -2,7 +2,7 @@
 // @name         MediaWiki LinkToEditUser
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Gives on userpages of mediawikis a link to Special:EditUser (you'll need mw-extension EditUser on that wiki).
-// @description:de-DE Erstellt auf Mediawiki-Seiten einen Link zu Special:EditUser (die Mediawiki-Erweiterung EditUser muss installiert sein).
+// @description:de-DE Erstellt auf Mediawiki-Benutzerseiten einen Link zu Special:EditUser (die Mediawiki-Erweiterung EditUser muss installiert sein).
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/mediawikilinktoedituser
 // @include      /wiki/(Benutzer|User).*/

@@ -6,10 +6,11 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @homepage     https://github.com/ardiman/userscripts/tree/master/phpbbcountposts
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */viewtopic.php*
 // @exclude      http://www.camp-firefox.de/forum/*
-// @version      1.0.5
-// @date         2014-11-09
+// @version      1.0.6
+// @date         2014-11-10
 // ==/UserScript==
 
 (function() {

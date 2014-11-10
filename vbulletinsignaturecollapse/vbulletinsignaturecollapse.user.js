@@ -5,6 +5,7 @@
 // @description:de-DE Erlaubt schnelles Ausblenden/Anzeigen von Signaturen in vBulletin- und anderen Forensystemen.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinsignaturecollapse
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */showthread.php*
 // @include      */showpost.php*
 // @include      */viewtopic.php*
@@ -15,8 +16,8 @@
 // @include      http://forums.modx.com/thread/*
 // @include      http://community.mybb.com/*
 // @include      http://www.xendach.de/threads/*
-// @version      1.0.7
-// @date         2014-11-08
+// @version      1.0.8
+// @date         2014-11-10
 // ==/UserScript==
 
 (function() {

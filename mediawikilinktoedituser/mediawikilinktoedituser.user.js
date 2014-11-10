@@ -5,10 +5,11 @@
 // @description:de-DE Erstellt auf Mediawiki-Benutzerseiten einen Link zu Special:EditUser (die Mediawiki-Erweiterung EditUser muss installiert sein).
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/mediawikilinktoedituser
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      /wiki/(Benutzer|User).*/
 // @include      /title=(Benutzer|User):.*&action=edit/
-// @version      1.0.3
-// @date         2014-11-09
+// @version      1.0.4
+// @date         2014-11-10
 // ==/UserScript==
 
 var h1First = document.evaluate("//h1[@id='firstHeading']//span", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);

@@ -5,10 +5,11 @@
 // @description:de-DE  Zeigt gekürzte Links in vBulletin-Foren komplett an.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinshowfulllinks
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */showthread.php*
 // @include      */viewtopic.php?*
-// @version      1.9
-// @date         2014-11-08
+// @version      1.9.1
+// @date         2014-11-10
 // ==/UserScript==
 
 

@@ -5,9 +5,10 @@
 // @description:de-DE Neben dem Button "Neues Thema" wird eine Schaltfläche erstellt, die alle neuen Posts in Tabs öffnet.
 // @grant        GM_openInTab
 // @homepage     https://github.com/ardiman/userscripts/tree/master/phpbbnewtopics
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */viewforum.php*
-// @version      1.0.3
-// @date         2014-11-09
+// @version      1.0.4
+// @date         2014-11-10
 // ==/UserScript==
  
 (function (){

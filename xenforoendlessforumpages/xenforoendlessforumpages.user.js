@@ -5,10 +5,11 @@
 // @description:de-DE Lädt in xenForo-Threads die folgenden Beiträge nach, sobald man bei einem mehrseitigen Thread ans Ende der Seite scrollt.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/xenforoendlessforumpages
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      http://xenforo.com/community/threads/*
 // @include      http://www.xendach.de/threads/*
-// @version      1.0.2
-// @date         2014-11-09
+// @version      1.0.3
+// @date         2014-11-10
 // ==/UserScript==
 
 var nextURL = null; // the URL for next, or null for pending/none

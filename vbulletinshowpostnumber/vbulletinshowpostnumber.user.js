@@ -5,11 +5,12 @@
 // @description:de-DE Zeigt [post=n]Titel[/post] neben # Beitragnummer - erleichtert somit das Verlinken auf einzelne Beiträge in vBulletin-Foren. Funktioniert nur in Linear- und Hybriddarstellung!
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinshowpostnumber
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */showthread.php*
 // @include      http://www.vbseo.com/f*
 // @include      http://www.apfeltalk.de/forum/*
-// @version      1.0.2
-// @date         2014-11-08
+// @version      1.0.3
+// @date         2014-11-10
 // ==/UserScript==
 
 (function () {

@@ -5,9 +5,10 @@
 // @description:de-DE  Entfernt gekürzte Beiträge von Benutzern auf der Ignorierliste komplett.
 // @grant        GM_addStyle
 // @homepage     https://github.com/ardiman/userscripts/tree/master/vbulletinfullignore
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */showthread.php*
-// @version      1.0.4
-// @date         2014-11-09
+// @version      1.0.5
+// @date         2014-11-10
 // ==/UserScript==
  
 (function (){

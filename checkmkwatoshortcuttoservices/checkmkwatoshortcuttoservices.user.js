@@ -5,9 +5,10 @@
 // @description:de-DE Erstellt ein Icon, mit dem man schnell zur Service-Konfiguration des Hosts gelangt.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/checkmkwatoshortcuttoservices
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      *check_mk/view.py?*
-// @version      1.0.2
-// @date         2014-11-09
+// @version      1.0.3
+// @date         2014-11-10
 // ==/UserScript==
 
 (function() {

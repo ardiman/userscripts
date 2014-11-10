@@ -5,10 +5,11 @@
 // @description:de-DE  Übersetzt Text in das, was Kenny von South Park sagen würde und umgekehrt. Ein Übersetzungsfenster erscheint, sobald man markierten Text mit gedrückter Alt-Taste anklickt.
 // @grant        none
 // @homepage     https://github.com/ardiman/userscripts/tree/master/kennytranslator
+// @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @exclude      http://www.namesuppressed.com/kenny/
 // @include      *
-// @version      1.0.1
-// @date         2014-11-09
+// @version      1.0.2
+// @date         2014-11-10
 // ==/UserScript==
 
 (function () {

@@ -9,7 +9,7 @@
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */check_mk/wato.py?mode=inventory&host*
 // @include      */check_mk/wato.py?filled_in=edithost*
-// @include      */mdk/check_mk/wato.py?folder=&host=*&mode=inventory
+// @include      */check_mk/wato.py?folder=&host=*&mode=inventory
 // @version      1.0.0
 // @date         2014-11-16
 // ==/UserScript==

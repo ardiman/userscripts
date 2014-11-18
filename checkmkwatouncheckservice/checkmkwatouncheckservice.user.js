@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Check_MK - WATO Uncheck Service
 // @namespace    http://openuserjs.org/users/ardiman
-// @description  Automatically unchecks service in WATO/Services of host x by doubleclick
-// @description:de-DE Entfernt automatisch den Haken bei WATO/Services für host x per Doppelklick
+// @description  Remember which checkbox should be always on or off by doubleclick on checkbox under WATO/Services of host.
+// @description:de-DE Merkt sich, welches Kontrollkästchen immer ein- oder ausgeschaltet sein soll durch Doppelklick auf das Kontrollkästchen unter WATO/Services of host.
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @homepage     https://github.com/ardiman/userscripts/tree/master/checkmkwatouncheckservice
@@ -10,65 +10,84 @@
 // @include      */check_mk/wato.py?mode=inventory&host*
 // @include      */check_mk/wato.py?filled_in=edithost*
 // @include      */check_mk/wato.py?folder=&host=*&mode=inventory
-// @version      1.0.1
-// @date         2014-11-16
+// @version      1.0.2
+// @date         2014-11-18
 // ==/UserScript==
 
 var cmkwatouncheckservice = {
 	setting: {
-		bgr: "blue",        // background of table cell with automatically unchecked checkbox
-		speeks: false,      // show alert if "automatically unchecked" is changed
+		bgru: "blue",        // background of table cell with automatically unchecked checkbox
+		bgrc: "purple",      // background of table cell with automatically checked checkbox
+		speeks: false,       // show alert if "automatically unchecked/checked" is changed
 	},
 
 	init: function() {
-		// Zunächst das Deaktivieren vornehmen und anzeigen:
-		var uncheckedservices = GM_getValue('cmkwatouncheckedservices','');
-		var mySarr = uncheckedservices.split(";");
-		for (var i = 0; i<mySarr.length; i++) {
-			var myEle = document.getElementsByName(mySarr[i])[0];
-			if (myEle !== undefined) {
-				myEle.checked = false;
-				myEle.parentNode.parentNode.setAttribute('style','background: ' + cmkwatouncheckservice.setting.bgr + ';');
-			}
-		}
-
-		// Checkboxen selektieren:
+		// Select checkboxes
 		var nodes = document.evaluate(
 			"//span[@class='checkbox']/input[@type='checkbox']",
 			document,
 			null,
 			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
 			null);
-
-		// Checkboxen Doppelklick-Ereignis zuweisen, mit dem die entsprechende Einstellung gewählt wird
+		var uncheckedservices = GM_getValue('cmkwatouncheckedservices','');
+		var checkedservices = GM_getValue('cmkwatocheckedservices','');
+		var myUArr = uncheckedservices.split(";");
+		var myCArr = checkedservices.split(";");
+		var i = 0;
+		// Change style of checkboxes (grandparent) and set their dblclick-event
 		for(var j = 0; j<nodes.snapshotLength; j++) {
 			var thisNode = nodes.snapshotItem(j);
 			var thisNodeName = thisNode.name;
+			var hitU = myUArr.indexOf(thisNodeName);
+			var hitC = myCArr.indexOf(thisNodeName);
+			if (hitU !== -1) {
+				i++;
+				thisNode.checked = false;
+				thisNode.parentNode.parentNode.setAttribute('style','background: ' + cmkwatouncheckservice.setting.bgru + ';');
+			}
+			if (hitC !== -1) {
+				i++;
+				thisNode.checked = true;
+				thisNode.parentNode.parentNode.setAttribute('style','background: ' + cmkwatouncheckservice.setting.bgrc + ';');
+			}
 			thisNode.ondblclick=function(event) {
 				event.preventDefault();
 				event.stopPropagation();
-				var uncheckedservices = GM_getValue('cmkwatouncheckedservices','');
-				var mySarr = uncheckedservices.split(";");
-				var hit = mySarr.indexOf(this.name);
-				if (hit === -1) {
-					uncheckedservices = uncheckedservices + ";" + this.name;
-					if (cmkwatouncheckservice.setting.speeks) {
-						alert("Next page load will set checked=false for this input.");
-					}
-					this.parentNode.parentNode.setAttribute('style','background: ' + cmkwatouncheckservice.setting.bgr + ';');
+				if (this.checked) {
+					cmkwatouncheckservice.changecheck(this,'cmkwatocheckedservices',true,cmkwatouncheckservice.setting.bgrc);
+				} else {
+					cmkwatouncheckservice.changecheck(this,'cmkwatouncheckedservices',false,cmkwatouncheckservice.setting.bgru);
 				}
-				else {
-					mySarr.splice(hit, 1);
-					uncheckedservices = mySarr.join(';');
-					if (cmkwatouncheckservice.setting.speeks) {
-						alert("Next page load won't change checked status for this input anymore.");
-					}
-					this.parentNode.parentNode.setAttribute('style','background: inherit;');
-				}
-				GM_setValue('cmkwatouncheckedservices',uncheckedservices);
 			};
 		}
+		return i;
+	},
+
+	changecheck: function(ele,whichValue,forMsg,bg) {
+		var myServices = GM_getValue(whichValue,'');
+		var myArr = myServices.split(";");
+		var hit = myArr.indexOf(ele.name);
+		if (hit === -1) {
+			myServices = myServices + ";" + ele.name;
+			if (cmkwatouncheckservice.setting.speeks) {
+				alert("Next page load will set checked=" + forMsg + " for this input.");
+			}
+			ele.parentNode.parentNode.setAttribute('style','background: ' + bg + ';');
+		}
+		else {
+			myArr.splice(hit, 1);
+			myServices = myArr.join(';');
+			if (cmkwatouncheckservice.setting.speeks) {
+				alert("Next page load won't change checked status for this input anymore.");
+			}
+			ele.parentNode.parentNode.setAttribute('style','background: inherit;');
+		}
+		GM_setValue(whichValue,myServices);
 	}
 };
-cmkwatouncheckservice.init();
+
+var setchkbx = cmkwatouncheckservice.init();
+if (cmkwatouncheckservice.setting.speeks && setchkbx !==0) {
+	alert("One or more (" + setchkbx + ") checkboxes were set automatically. Please save this configuration.");
+}
 

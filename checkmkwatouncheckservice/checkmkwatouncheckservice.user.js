@@ -10,8 +10,8 @@
 // @include      */check_mk/wato.py?mode=inventory&host*
 // @include      */check_mk/wato.py?filled_in=edithost*
 // @include      */check_mk/wato.py?folder=&host=*&mode=inventory
-// @version      1.0.2
-// @date         2014-11-18
+// @version      1.0.3
+// @date         2014-11-19
 // ==/UserScript==
 
 var cmkwatouncheckservice = {
@@ -54,19 +54,22 @@ var cmkwatouncheckservice = {
 				event.preventDefault();
 				event.stopPropagation();
 				if (this.checked) {
-					cmkwatouncheckservice.changecheck(this,'cmkwatocheckedservices',true,cmkwatouncheckservice.setting.bgrc);
+					cmkwatouncheckservice.changecheck(this,'cmkwatocheckedservices',true,cmkwatouncheckservice.setting.bgrc,'cmkwatouncheckedservices');
 				} else {
-					cmkwatouncheckservice.changecheck(this,'cmkwatouncheckedservices',false,cmkwatouncheckservice.setting.bgru);
+					cmkwatouncheckservice.changecheck(this,'cmkwatouncheckedservices',false,cmkwatouncheckservice.setting.bgru,'cmkwatocheckedservices');
 				}
 			};
 		}
 		return i;
 	},
 
-	changecheck: function(ele,whichValue,forMsg,bg) {
+	changecheck: function(ele,whichValue,forMsg,bg,otherValue) {
 		var myServices = GM_getValue(whichValue,'');
+		var otherServices = GM_getValue(otherValue,'');
 		var myArr = myServices.split(";");
+		var myOtherArr = otherServices.split(";");
 		var hit = myArr.indexOf(ele.name);
+		var hitOther = myOtherArr.indexOf(ele.name);
 		if (hit === -1) {
 			myServices = myServices + ";" + ele.name;
 			if (cmkwatouncheckservice.setting.speeks) {
@@ -83,6 +86,11 @@ var cmkwatouncheckservice = {
 			ele.parentNode.parentNode.setAttribute('style','background: inherit;');
 		}
 		GM_setValue(whichValue,myServices);
+		if (hitOther !==-1) {
+			myOtherArr.splice(hit, 1);
+			otherServices = myOtherArr.join(';');
+			GM_setValue(otherValue,otherServices);
+		}
 	}
 };
 

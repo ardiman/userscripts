@@ -7,7 +7,7 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/checkmkwatoshortcuttoservices
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      *check_mk/view.py?*
-// @licence      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
 // @supportURL   https://github.com/ardiman/userscripts/issues
 // @version      1.0.4
 // @date         2014-11-21

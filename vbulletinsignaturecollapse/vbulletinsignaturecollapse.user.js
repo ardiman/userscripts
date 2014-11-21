@@ -16,8 +16,10 @@
 // @include      http://forums.modx.com/thread/*
 // @include      http://community.mybb.com/*
 // @include      http://www.xendach.de/threads/*
-// @version      1.0.8
-// @date         2014-11-10
+// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @supportURL   https://github.com/ardiman/userscripts/issues
+// @version      1.0.9
+// @date         2014-11-21
 // ==/UserScript==
 
 (function() {

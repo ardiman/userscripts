@@ -7,8 +7,10 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/fxforumnewtab
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      http://www.camp-firefox.de/forum/*
-// @version      1.0.4
-// @date         2014-11-10
+// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @supportURL   https://github.com/ardiman/userscripts/issues
+// @version      1.0.5
+// @date         2014-11-21
 // ==/UserScript==
 
 var res = document.evaluate("//a[@class='postlink-local']|//a[@class='postlink']", document, null,

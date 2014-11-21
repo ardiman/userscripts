@@ -8,8 +8,10 @@
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @exclude      http://www.namesuppressed.com/kenny/
 // @include      *
-// @version      1.0.2
-// @date         2014-11-10
+// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @supportURL   https://github.com/ardiman/userscripts/issues
+// @version      1.0.3
+// @date         2014-11-21
 // ==/UserScript==
 
 (function () {

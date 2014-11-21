@@ -10,8 +10,10 @@
 // @include      */check_mk/wato.py?mode=inventory&host*
 // @include      */check_mk/wato.py?filled_in=edithost*
 // @include      */check_mk/wato.py?folder=&host=*&mode=inventory
-// @version      1.0.3
-// @date         2014-11-19
+// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @supportURL   https://github.com/ardiman/userscripts/issues
+// @version      1.0.4
+// @date         2014-11-21
 // ==/UserScript==
 
 var cmkwatouncheckservice = {

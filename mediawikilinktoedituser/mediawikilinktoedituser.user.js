@@ -10,15 +10,13 @@
 // @include      /title=(Benutzer|User):.*&action=edit/
 // @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.5
-// @date         2014-11-21
+// @version      1.0.6
+// @date         2016-02-19
 // ==/UserScript==
 
-var h1First = document.evaluate("//h1[@id='firstHeading']//span", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
-var userName = h1First.snapshotItem(0).innerHTML.replace(/ /g,"+").replace(/“/g,"").replace(/\/.*/g,"");
+var userName = mw.config.get('wgPageName');
 userName = encodeURI(userName.substring(userName.lastIndexOf(":")+1));
 
 var ulMenu = document.evaluate("//div[@id='p-cactions']//div//ul", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
 var liChConf = ulMenu.snapshotItem(0).appendChild(document.createElement('li'));
-
 liChConf.innerHTML='<a href="/index.php?title=Special:EditUser&amp;username='+userName+'">Konfiguration</a>';

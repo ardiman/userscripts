@@ -4,12 +4,12 @@
 // @description  Changes Jumpbox in german firefox-forum. Unread will become red, unwished forums in BLACKLIST will become invisible.
 // @description:de-DE Passt im deutschen Firefox-Forum die Box an, die bei Klick auf >Gehe zu< geöffnet wird. Ungelesene werden rot, unerwünschte Foren können per BLACKLIST ausgeblendet werden.
 // @grant        none
-// @homepage     https://github.com/ardiman/userscripts/tree/master/%name%
+// @homepage     https://github.com/ardiman/userscripts/tree/master/phpbbjumpboxchanger
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      https://www.camp-firefox.de/forum/*
 // @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.2
+// @version      1.0.3
 // @date         2016-03-05
 // ==/UserScript==
 

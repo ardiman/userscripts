@@ -9,8 +9,8 @@
 // @include      */viewforum.php*
 // @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.5
-// @date         2014-11-21
+// @version      1.0.6
+// @date         2016-10-30
 // ==/UserScript==
  
 (function (){
@@ -41,7 +41,8 @@ function openTab(url) {
 var f = 0;
 var newposts = new Array();
 // alle Links zu neuen Beitraegen finden
-var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread')]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
+// var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread')]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
+var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread') and not(contains(@class, 'icon-link'))]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
  
 for (var i=0; i < lnks.snapshotLength; i++) {
   thisnode = lnks.snapshotItem(i);

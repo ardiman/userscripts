@@ -1,4 +1,4 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name         phpBB New Topics
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Generates button which opens all new topics of phpBB3-boards in tabs.
@@ -9,8 +9,8 @@
 // @include      */viewforum.php*
 // @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.6
-// @date         2016-10-30
+// @version      1.0.7
+// @date         2017-01-18
 // ==/UserScript==
  
 (function (){
@@ -40,9 +40,10 @@ function openTab(url) {
  
 var f = 0;
 var newposts = new Array();
-// alle Links zu neuen Beitraegen finden
+// alle Links zu neuen Beitraegen finden (alte Codes fuer aeltere phpBB-Versionen)
 // var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread')]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
-var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread') and not(contains(@class, 'icon-link'))]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
+// var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread') and not(contains(@class, 'icon-link'))]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
+var lnks = document.evaluate("//a[contains(@href,'&view=unread#unread') and not(contains(@class, 'row-item-link'))]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
  
 for (var i=0; i < lnks.snapshotLength; i++) {
   thisnode = lnks.snapshotItem(i);
@@ -58,8 +59,9 @@ for (var i=0; i < lnks.snapshotLength; i++) {
  
 // Button generieren, sofern noetig
 if (f >= showBtnIf) {
-  // Zieldiv finden
-  var targetnode = document.evaluate("//div[@class='buttons']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+  // Zieldiv finden (alte Codes fuer aeltere phpBB-Versionen)
+  // var targetnode = document.evaluate("//div[@class='buttons']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+  var targetnode = document.evaluate("//div[@class='action-bar bar-top']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
   // normalerweise ist erster div-Abschnitt mit class=buttons {snapshotItem(0)} derjenige mit dem Button "NeuesThema" -> da soll's also hin
   var btn = targetnode.snapshotItem(0).appendChild(document.createElement('button'));
   if (f > 1) {
@@ -72,6 +74,7 @@ if (f >= showBtnIf) {
   btn.style.fontWeight='bold';
   btn.style.fontSize='0.9em';
   btn.style.height='25px';
+  btn.style.padding='0px 8px';
   addEvent(btn, "click",
     function(e) {
       if (maxlnks==0) this.style.display = 'none';

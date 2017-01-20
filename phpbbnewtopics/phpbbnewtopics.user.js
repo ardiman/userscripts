@@ -9,8 +9,8 @@
 // @include      */viewforum.php*
 // @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.8
-// @date         2017-01-19
+// @version      1.0.9
+// @date         2017-01-20
 // ==/UserScript==
 
 (function (){
@@ -63,19 +63,16 @@ if (f >= showBtnIf) {
     // Code fuer aeltere phpBB-Versionen
 	var targetnode = document.evaluate("//div[@class='buttons']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
   }
-  var btn = targetnode.snapshotItem(0).appendChild(document.createElement('button'));
+  var btn = targetnode.snapshotItem(0).appendChild(document.createElement('a'));
+  var stricon='</span><i class="icon fa-rocket fa-fw" aria-hidden="true"></i>';
   if (f > 1) {
-    btn.innerHTML = "&Ouml;ffne " + f + " neue Beitr&auml;ge";
+    btn.innerHTML = "<span>&Ouml;ffne " + f + " neue Beitr&auml;ge "+stricon;
    } else {
-    btn.innerHTML = "&Ouml;ffne neuen Beitrag";
+    btn.innerHTML = "<span>&Ouml;ffne neuen Beitrag "+stricon;
   }
+  btn.className='button';
   btn.id='gmphpbbnewtopics';
-  btn.style.background='#EEEEEE';
-  btn.style.color='#BC2A4D';
-  btn.style.fontWeight='bold';
-  btn.style.fontSize='0.9em';
-  btn.style.height='25px';
-  btn.style.padding='0px 8px';
+
   addEvent(btn, "click",
     function(e) {
       if (maxlnks===0) this.style.display = 'none';

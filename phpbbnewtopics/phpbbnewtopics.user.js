@@ -7,10 +7,11 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/phpbbnewtopics
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      */viewforum.php*
-// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+// @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.9
-// @date         2017-01-20
+// @version      1.1.0
+// @date         2017-11-19
 // ==/UserScript==
 
 (function (){

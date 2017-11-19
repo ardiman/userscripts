@@ -7,10 +7,11 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/fxforumnewtab
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include      https://www.camp-firefox.de/forum/*
-// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+// @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.6
-// @date         2017-11-18
+// @version      1.0.7
+// @date         2017-11-19
 // ==/UserScript==
 
 var res = document.evaluate("//a[@class='postlink-local']|//a[@class='postlink']", document, null,

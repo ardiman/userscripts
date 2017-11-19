@@ -7,10 +7,11 @@
 // @homepage     https://github.com/ardiman/userscripts/tree/master/phpbbcollapsequickreply
 // @icon         https://raw.githubusercontent.com/ardiman/userscripts/master/scriptlogo.gif
 // @include       */viewtopic.php*
-// @license      CC BY-NC-SA 3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/
+// @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+// @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0.0
-// @date         2016-02-21
+// @version      1.0.1
+// @date         2017-11-19
 // ==/UserScript==
 
 $('#qr_postform').before('<div id="reprap" class="panel" style="text-align: center;"><input class="button2" type="submit" value="Schnellantwort anzeigen"></div>').css('display', 'none');

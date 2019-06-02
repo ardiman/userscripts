@@ -12,6 +12,7 @@
 // @include      */index.php?showtopic=*
 // @include      */index.php?topic=*
 // @include      */index.php/topic=*
+// @include      */?thread/*
 // @include      http://community.invisionpower.com/topic/*
 // @include      http://forums.modx.com/thread/*
 // @include      http://community.mybb.com/*
@@ -19,13 +20,13 @@
 // @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 // @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.1.0
-// @date         2017-11-19
+// @version      1.2.0
+// @date         2019-06-02
 // ==/UserScript==
 
 (function() {
 	var nodes = document.evaluate(
-		"//td/div/following::comment()[.=' sig ']|//div[@class='signaturecontainer']|//div[@class='dis-signature']|//div[contains(@class, 'signature')]",
+		"//td/div/following::comment()[.=' sig ']|//div[@class='signaturecontainer']|//div[@class='dis-signature']|//div[contains(@class, 'signature')]|//div[@class='messageSignature']",
 		document,
 		null,
 		XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,

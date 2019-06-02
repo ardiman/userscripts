@@ -21,7 +21,7 @@
 // @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 // @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.2.0
+// @version      1.2.1
 // @date         2019-06-02
 // ==/UserScript==
 

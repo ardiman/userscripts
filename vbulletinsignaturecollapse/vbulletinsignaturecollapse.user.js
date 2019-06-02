@@ -21,7 +21,7 @@
 // @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 // @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.2.1
+// @version      1.2.2
 // @date         2019-06-02
 // ==/UserScript==
 
@@ -48,7 +48,7 @@
 			thissign.parentNode.insertBefore(anchor, thissign.previousSibling);
 		// vBulletin 4.x (signaturecontainer) or phpBB v3, xenForo (signature) or discuss on modx.com (dis-signature)
 		} else {
-			if (nodes.snapshotItem(i).className=="signaturecontainer" || nodes.snapshotItem(i).classList.contains("signature") || nodes.snapshotItem(i).className=="dis-signature") {
+			if (nodes.snapshotItem(i).className=="signaturecontainer" || nodes.snapshotItem(i).classList.contains("signature") || nodes.snapshotItem(i).className=="dis-signature" || nodes.snapshotItem(i).className=="messageSignature") {
 				thissign = nodes.snapshotItem(i);
 				thissign.style.display = 'none';
 				var anchor = document.createElement("a");

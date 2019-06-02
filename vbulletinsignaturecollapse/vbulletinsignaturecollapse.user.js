@@ -12,6 +12,7 @@
 // @include      */index.php?showtopic=*
 // @include      */index.php?topic=*
 // @include      */index.php/topic=*
+// @include      */thread/*
 // @include      */?thread/*
 // @include      http://community.invisionpower.com/topic/*
 // @include      http://forums.modx.com/thread/*

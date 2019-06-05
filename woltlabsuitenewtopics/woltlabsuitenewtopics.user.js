@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         WoltLab Suite - New Topics
+// @author       ardiman
 // @namespace    http://openuserjs.org/users/ardiman
 // @description  Generates button which opens all new topics of woltlab-boards in tabs
 // @description:de-DE Erstellt in woltlab-Foren eine Schaltfläche, die alle neuen Posts in Tabs öffnet.
@@ -10,8 +11,8 @@
 // @license      CC-BY-NC-SA-3.0; https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 // @license      MIT; https://opensource.org/licenses/MIT
 // @supportURL   https://github.com/ardiman/userscripts/issues
-// @version      1.0
-// @date         2019-06-04
+// @version      1.0.1
+// @date         2019-06-05
 // ==/UserScript==
 
 (function (){
@@ -33,16 +34,16 @@ function addEvent(elm, evType, fn, useCapture) {
 
 /* x-browser open tab */
 function openTab(url) {
-    if (typeof GM_openInTab != 'undefined') GM_openInTab(url);
-    // if (typeof GM_openInTab != 'undefined') chromeWin.openNewTabWith(url,url,null,true);
-    else if (typeof PRO_openInTab != 'undefined') PRO_openInTab(url,2);
+    if (typeof GM_openInTab != 'undefined') GM_openInTab(url); // for tampermonkey or greasemonkey
+    else if (typeof PRO_openInTab != 'undefined') PRO_openInTab(url,2); // for ie7pro
     else window.open(url);
 }
 
 var f = 0;
-var newposts = new Array();
+var newposts = [];
 // alle Links zu neuen Beitraegen finden
-var lnks = document.evaluate(".//ol[@class='tabularListColumns messageGroup wbbThread jsClipboardObject new']//li[@class='columnSubject']//h3//a", document.body, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
+// var lnks = document.evaluate(".//ol[@class='tabularListColumns messageGroup wbbThread jsClipboardObject new']//li[@class='columnSubject']//h3//a", document.body, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
+var lnks = document.evaluate(".//ol[contains(@class,'new')]//li[@class='columnSubject']//h3//a", document.body, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE , null);
 var thisnode;
 
 for (var i=0; i < lnks.snapshotLength; i++) {
@@ -52,7 +53,7 @@ for (var i=0; i < lnks.snapshotLength; i++) {
    } else {
     newposts.push(thisnode.href.replace(/\?action=firstNew/, "")); // (bereinigten) Link zum Thread speichern
   }
-  f++
+  f++;
   // falls nur die ersten x neuen Beitraege geoeffnet werden sollen, dann raus hier:
   if (f+1 > maxlnks && maxlnks > 0) break;
 }
@@ -61,7 +62,7 @@ for (var i=0; i < lnks.snapshotLength; i++) {
 if (f >= showBtnIf) {
   // Zieldiv finden
   var targetnode = document.evaluate("//nav[@class='contentHeaderNavigation']//ul", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
-  // normalerweise ist erster div-Abschnitt mit class=buttons {snapshotItem(0)} derjenige mit dem Button "NeuesThema" -> da soll's also hin
+  // normalerweise ist erster nav-Abschnitt mit class=contentHeaderNavigation {snapshotItem(0)} derjenige mit dem Button "NeuesThema" -> da soll's also hin
   var targetitem = targetnode.snapshotItem(0).appendChild(document.createElement('li'));
   var btn = targetitem.appendChild(document.createElement('a'));
   if (f > 1) {
@@ -73,7 +74,7 @@ if (f >= showBtnIf) {
   btn.setAttribute("class","button");
   addEvent(btn, "click",
     function(e) {
-      if (maxlnks==0) this.style.display = 'none';
+      if (maxlnks===0) this.style.display = 'none';
       if (e && e.target) e.preventDefault();
       else window.event.returnValue = false;
       if (useTimeout) {
@@ -84,8 +85,10 @@ if (f >= showBtnIf) {
         }
         var timer = setInterval(inner, tOut);
       } else {
-        for (var i=0; i < newposts.length; i++)
-          openTab(newposts[i]);
+        var n=0;
+        for (n < newposts.length; n++;) {
+          openTab(newposts[n]);
+        }
       }
     }
   , false);
